@@ -1,0 +1,118 @@
+/* CSS - Cascading Style Sheet */
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=5430Z0kIiqDsUE4H4xCN+lnSbfC */
+
+:root{
+/* As hex codes , lightest to darkest */
+    /* purple color */
+    --purple-0: #CD14A4; /*lightest*/
+    --purple-1: #BD0093;
+    --purple-2: #9A0078;
+    --purple-3: #7C0061;
+    --purple-4: #5A0047;/*darkest*/
+    /* Greys
+    */
+}
+body {
+    background-image: url(bckgrd.png);
+    background-attachment: fixed;
+    font-family: 'Adamina', serif;
+    
+}
+
+/* unvisited link */
+a:link {
+  color:  grey;
+}
+
+/* visited link */
+a:visited {
+  color: var(--purple-1);
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--purple-0);
+}
+
+/* selected link */
+a:active {
+  color: var(--purple-4);
+}
+.nav{
+    color: var(--purple-1);
+    text-align: center;
+}
+
+ul {
+	border-radius:30px;
+	background-color: black;
+    box-shadow: 5px 5px 5px #808080;
+	list-style-type: none;
+    padding:0; 
+    margin:auto;
+    overflow: hidden;
+    
+}
+li {
+    display:inline;
+    float:left;
+}
+li a{
+    display: block;
+    padding: 5px 25px;
+    text-decoration: none;
+    
+}
+li.dropdwn{
+    display: inline-block;
+}
+.dropdwn-content{
+    display: none;
+    position:absolute;
+    background-color: #283344 ;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px black;
+    z-index: 1;
+}
+.dropdwn:hover .dropdwn-content{display: block;}
+
+.main {
+    //margin-top: 100px;
+    //margin-left: auto;   
+    //margin-right: auto;
+    margin: 100px auto 200px;
+    min-width: 500px;
+    width: 60%;
+    max-width: 700px;
+    text-align: center;
+    
+}
+.main header {
+    font-family: 'Gabriela',serif;
+    
+}
+.sagecell_output_elements {
+    width : 600px;
+}
+.sagecell_stderr{
+    display: none;
+}
+.grid{
+    display:inline-block;    
+}
+.grid img{
+    padding: 10px;
+    max-height: 150px;
+}
+
+footer{
+    
+    margin: auto; 
+    text-align: center;
+    width: 100%;
+}
+footer img{
+    padding: 10px;
+    width: 40px;
+}

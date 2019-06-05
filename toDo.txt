@@ -1,0 +1,8 @@
+
+About me page always need work, add resume pieces 
+
+projects, ?? add some code snippets and explain them? 
+
+remember ../../ 
+
+also script add to nav for a:active colors
