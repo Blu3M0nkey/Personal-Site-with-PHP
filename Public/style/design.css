@@ -19,10 +19,12 @@ body {
     font-family: 'Adamina', serif;
     
 }
-
+@media only screen and (max-width: 620px) {
+    
+}
 /* unvisited link */
 a:link {
-  color:  grey;
+  color: grey;
 }
 
 /* visited link */
@@ -106,8 +108,7 @@ li.dropdwn{
     max-height: 150px;
 }
 
-footer{
-    
+footer{ 
     margin: auto; 
     text-align: center;
     width: 100%;

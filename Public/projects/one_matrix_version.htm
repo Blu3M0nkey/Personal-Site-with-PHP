@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>The One-Matrix Version of the Smiley Applet</title>
+    <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
+    <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
+    <script>
+$(function () {
+    // Make *any* div with class 'compute' a Sage cell
+    sagecell.makeSagecell({inputLocation: 'div.compute',
+    						template:       sagecell.templates.minimal,
+                           evalButtonText: 'Launch the Interactive Applet Now'});
+});
+    </script>
+  </head>
+  <body style="width: 1000px;">
+
+<! you may start modifying below this point!>
+<! you may start modifying below this point!>
+<! you may start modifying below this point!>
+<! you may start modifying below this point!>
+<! you may start modifying below this point!>
+
+  <h1>The One-Matrix Version of the Smiley Applet</h1>
+
+<p>An Interactive Applet powered by Sage and MathJax.</p>
+<p>(By Prof. Jane Long, based on an activity of Prof. Tom Judson, with some tiny modifications by Prof. Gregory Bard)</p>
+
+<hr>
+
+<h2>Overview</h2>
+<p>This is perhaps one of the most famous Sage Interacts/Applets of all time.</p>
+
+<p>To understand the graphical aspects of matrix transformations, 
+we can choose any matrix that we like, and the applet will show us
+what happens to the smiley face.</p>
+
+<div class="compute">
+<script type="text/x-sage">
+t = var('t') 
+
+@interact 
+def _(auto_update=True, A=matrix(RDF, [[1,0],[0,1]] ) ): 
+    pll=A*vector((-0.5,0.5)) 
+    plr=A*vector((-0.3,0.5)) 
+    prl=A*vector((0.3,0.5)) 
+    prr=A*vector((0.5,0.5)) 
+    
+    left_eye = line( [pll,plr] ) + point(pll, size=5) + point(plr, size=5)
+    right_eye = line( [prl,prr], color='green') + point(prl, size=5, color='green') + point(prr, size=5, color='green')
+    
+    mouth_one = parametric_plot(A*vector([t, -0.15*sin(2*pi*t) - 0.5]), (t, -0.5, 0), color='red')
+    mouth_two = parametric_plot(A*vector([t, -0.15*sin(2*pi*t) - 0.5]), (t,0,0.5), color='orange') 
+    
+    mouth = mouth_one + mouth_two
+    
+    face1 = parametric_plot(A*vector([cos(t),sin(t)]), (t,0,pi/2), color='black')
+    face2 = parametric_plot(A*vector([cos(t),sin(t)]), (t,pi/2,pi), color='pink')
+    face3 = parametric_plot(A*vector([cos(t),sin(t)]), (t,pi,3*pi/2), color='cyan')
+    face4 = parametric_plot(A*vector([cos(t),sin(t)]), (t,3*pi/2,2*pi), color='sienna')
+    
+    face = face1 + face2 + face3 + face4
+    
+    guy = right_eye + left_eye + face + mouth 
+    
+    print "The smiley guy... transformed by A$"
+    
+    guy.show(aspect_ratio=1)
+    
+    print "This interact is due to Prof. Jane Long, based on an activity of Prof. Tom Judson, both at Stephen F. Austin State in Nacogdoches, TX."
+</script>
+</div>
+<hr>
+Last modified on February 11th, 2016.
+</body>
+</html>

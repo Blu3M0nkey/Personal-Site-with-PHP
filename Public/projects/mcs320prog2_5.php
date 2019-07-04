@@ -1,6 +1,6 @@
 <?php require_once('..\..\Private\initialize.php'); ?>
 <?php $title = "Sam's Project 2.5";
-    $script = '<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>,
+    $script = '<script src="https://sagecell.sagemath.org/static/jquery.min.js"></script>
     <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script>
     <script>
 $(function () {
